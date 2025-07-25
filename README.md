@@ -9,4 +9,4 @@ This repository contains basic Python practice files for Week 1.
 
 ## Purpose
 
-To get familiar with basic Python scripting and Git version control during the first week of learning...
+To get familiar with basic Python scripting and Git version control during the first week of learning.
