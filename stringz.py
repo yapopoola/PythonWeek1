@@ -56,16 +56,16 @@ length_of_student_name = len(student_name)
 
 # String slicing allows you use the index of a string to determine 
 # where you want your string to start and stop.
-student_first_name = student_name[:5]
+student_first_name = student_name[0:5:3]
 student_last_name = student_name[6:]
 
-print(student_last_name)
+# print(student_first_name)
 
 # Accessing attributes of strings using dot notation
 teacher_and_student = "The teacher's name is: {} while the student's name is: {}".format(teacher_name, student_name)
 password = "7a"
 
-print(student_name.replace(student_name[6:], "*****"))
+# print(student_name.replace(student_name[6:], "*****"))
 
 
 """
@@ -77,3 +77,8 @@ reversed_word = {This is the part you should implement using slicing}
 print(word) --> mango
 print(reversed_word) --> ognam
 """
+
+word = "rafihatu"
+reversed_word = word[: : -1]
+
+print(reversed_word)
