@@ -22,15 +22,17 @@ last_names = ["Popoola", "Bello",]
 # Extend takes in another sequence and adds all 
 # the items in that sequence into the list whose extend function was called.
 first_names.extend(last_names)
-
+first_names = first_names + last_names
 # Append takes in just one item and makes it the last item 
 # in the list whose append function was called.
 last_names.append(first_names)
 
 # Explore other functions of the list
-new_list = ["Yusuf", "Bello", "Rafihatu", "Popoola",]
+new_list = [
+    "Yusuf", "Bello", "Rafihatu", "Yusuf", "Popoola", "Yusuf"
+]
 # Sort would sort string based lists alphabetically and number based list based on their values.
 new_list.sort()
-# Reverse would simply return the list start from the last item to the first item.
+# Reverse would simply return the list starting from the last item to the first item.
 new_list.reverse()
-print(new_list[0:2])
+print(new_list)
