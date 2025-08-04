@@ -275,20 +275,105 @@
 
 # ---------------------------------------------------------------------------
 
-cost = float(input('How much money do you intend to spend at the store sale: '))
+# cost = float(input('How much money do you intend to spend at the store sale: '))
 
-if cost < 75:
-        print ('You receive no discount')
-elif cost >= 75 and cost <100:
-        new_cost1 = float(cost*0.15)
-        print (f"You receive 15'%' discount. Your discount is {new_cost1}. Please pay {cost - new_cost1}")
-elif cost >= 100 and cost <150:
-        new_cost2 = float(cost*0.25)
-        print (f"You receive 25'%' discount. Your discount is {new_cost2}. Please pay {cost - new_cost2}")
-elif cost >= 150 :
-        new_cost3 = float(cost*0.35)
-        print (f"You receive 35'%' discount. Your discount is {new_cost3}. Please pay {cost - new_cost3}")
-else:
-        print ('Error')
+# if cost < 75:
+#         print ('You receive no discount')
+# elif cost >= 75 and cost <100:
+#         new_cost1 = float(cost*0.15)
+#         print (f"You receive 15'%' discount. Your discount is {new_cost1}. Please pay {cost - new_cost1}")
+# elif cost >= 100 and cost <150:
+#         new_cost2 = float(cost*0.25)
+#         print (f"You receive 25'%' discount. Your discount is {new_cost2}. Please pay {cost - new_cost2}")
+# elif cost >= 150 :
+#         new_cost3 = float(cost*0.35)
+#         print (f"You receive 35'%' discount. Your discount is {new_cost3}. Please pay {cost - new_cost3}")
+# else:
+#         print ('Error')
 
 # -------------------------------------------------------------------------------
+# x = -567
+# x = str(x)
+# reversed_x = x[ : : -1]
+# if reversed_x.endswith('-'):
+#     reversed_x2 = reversed_x[0:-1]
+#     result = '-' + reversed_x2
+# # else:
+# #     reversed_x = x[ : : -1]
+# print(result)
+
+# # --------------------------------------------------------------------
+
+# x = int(input('Number = '))
+# x = str(x)
+# reversed_x = x[ : : -1]
+# if reversed_x.endswith('-'):
+#     reversed_x2 = reversed_x[0:-1]
+#     result = '-' + reversed_x2
+# else:
+#     result = reversed_x
+
+# print(int(result))
+
+# --------------------------------------------------------------
+# x = int(input('Number = '))
+# x = str(x)
+# reversed_x = x[ : : -1]
+# if reversed_x.endswith('-'):
+#     reversed_x2 = reversed_x[0:-1]
+#     result = '-' + reversed_x2
+# else:
+#     result = reversed_x
+
+# if -2_147_483_648 <= int(result) <= 2_147_483_647:
+#     print (0)
+
+# print(int(result))
+
+# x = int(input('Number = '))
+# x_str = str(x)
+# reversed_x = x_str[::-1]
+
+# if reversed_x.endswith('-'):
+#     reversed_x = '-' + reversed_x[:-1]
+
+# result = int(reversed_x)
+
+# if -2_147_483_648 <= result <= 2_147_483_647:
+#     print(result)
+# else:
+#     print(0)
+
+# def reverse(x: int) -> int:
+#     INT_MIN, INT_MAX = -2**31, 2**31 - 1
+    
+#     sign = -1 if x < 0 else 1
+#     x_abs = abs(x)
+    
+#     reversed_num = 0
+#     while x_abs != 0:
+#         digit = x_abs % 10
+#         x_abs //= 10
+        
+#         # Check overflow before adding the next digit
+#         if (reversed_num > INT_MAX // 10 or 
+#            (reversed_num == INT_MAX // 10 and digit > 7)):
+#             return 0
+        
+#         reversed_num = reversed_num * 10 + digit
+    
+#     return sign * reversed_num
+
+
+# x = str(-121)
+# rx = x[ : : -1]
+# if x == rx:
+#     print (True)
+# else:
+#     print (False)
+
+s = "Hello World"
+s = s.strip()
+s = s.split(' ')
+result  = len(s[-1])
+print (result)
