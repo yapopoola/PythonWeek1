@@ -372,8 +372,68 @@
 # else:
 #     print (False)
 
-s = "Hello World"
-s = s.strip()
-s = s.split(' ')
-result  = len(s[-1])
-print (result)
+# s = "Hello World"
+# s = s.strip()
+# s = s.split(' ')
+# result  = len(s[-1])
+# print (result)
+
+# s = 
+# I:1
+# V:5
+# X:10
+# L:50
+# C:100
+# D:500
+# M:1000
+
+
+# start = int(input('Start from: '))
+# stop = int(input('stop at: '))
+# prime_numbers = list(range(start,stop))
+# for num in prime_numbers:
+#     if num / 1 == num and num / num == 1:
+#         print (num)
+
+# stop = int(input('stop at: '))
+# for nom in range(2, stop):
+
+
+# numbers1_21 = range(1, 21)
+# numbers1_12 = range(1, 13)
+# # given_number = given_number * int(range(1, 13))
+# for each_num in numbers1_21:
+#     for every_num in numbers1_12:
+#         result = each_num * every_num
+#         print(f'{each_num} x {every_num} = {result}')
+
+# # abc = range(0,9)
+# for i in range(0,9):
+#     print (i)
+
+
+# for n in range(2, 10):
+#     for x in range(2, n):
+#         if n % x == 0:
+#             print(n, 'equals', x, '*', n//x)
+#             break
+#     else:
+#         # loop fell through without finding a factor
+#         print(n, 'is a prime number')
+
+
+# status = 4180
+# match status:
+#     case 400:
+#         print( "Bad request")
+#     case 404:
+#         print ("Not found")
+#     case 418:
+#         print ("I'm a teapot")
+#     case _:
+#         print ("Something's wrong with the internet")
+
+
+number = 12345
+while not number == 112233:
+    print ("continue counting")
