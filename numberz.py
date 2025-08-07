@@ -17,7 +17,7 @@ complex_days = 1j
 # print(str(float_days))
 
 # # To round a number to its nearest whole number, we can use the python builtin `round` function e.g
-print(round(float_days))
+# print(round(float_days))
 
 
 addition = days + float_days
@@ -26,6 +26,11 @@ multiplication = days * float_days
 division = days / float_days
 rounded_div = days // float_days
 exponential = days ** 2
-modulus = float_days % days
+modulus = 11 // 2
 
 print(modulus)
+
+
+rafi_age = 25
+rafi_age += 1
+print(rafi_age)
