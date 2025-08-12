@@ -5,7 +5,7 @@
 
 
 list_of_num1 = list(range(1, 21))
-print(list_of_num1)
+# print(list_of_num1)
 list_of_num2 = []
  
 for num in list_of_num1:
@@ -25,3 +25,19 @@ even_and_odd = [
 ]
 
 print(even_and_odd)
+
+
+'''
+Create a list of numbers from 1 to 20 and then create
+a set of those numbers where each number in the set
+is each number in the list multiplied by 10
+ '''
+
+list_of_nums = list(range(1,21))
+set_of_nums = set()
+for every_num in list_of_nums:
+    set_of_nums.add(every_num * 10)
+print(set_of_nums)
+
+set_comp = {every_num * 10 for every_num in list_of_nums}
+print (set_comp)
