@@ -41,3 +41,76 @@ print(set_of_nums)
 
 set_comp = {every_num * 10 for every_num in list_of_nums}
 print (set_comp)
+
+
+
+
+
+
+student_info = {
+    "Gabriella": 5,
+    "Paul": 20,
+    "Jack": 3,
+    "Bond": 1,
+    "Ahmed": 10,
+    "Tiara": 2,
+    "Kaitlyn": 6,
+    "Lucy": 4
+}
+
+# students_activeness = student_info.copy()
+
+# for student_name in students_activeness:
+#     if students_activeness[student_name] > 5:
+#         students_activeness[student_name] = 'active'
+#     else:
+#         students_activeness[student_name] = 'inactive'
+
+# print(students_activeness)
+
+
+
+# students_activeness = student_info.copy()
+
+# for student_name, days_since_last_login in students_activeness.items():
+#     if days_since_last_login > 5:
+#         students_activeness[student_name] = 'active'
+#     else:
+#         students_activeness[student_name] = 'inactive'
+
+
+students_activeness1 = {student_name:'active' if days_since_last_login > 5  else 'inactive'  for student_name, days_since_last_login in student_info.items() }
+# {'Gabriella': 'inactive', 'Paul': 'active', 'Jack': 'inactive', 'Bond': 'inactive', 'Ahmed': 'active', 'Tiara': 'inactive', 'Kaitlyn': 'active', 'Lucy': 'inactive'}
+active_students = {student_name:'active'  for student_name in students_activeness1 if students_activeness1[student_name] == 'active'}
+inactive_students =  {student_name:'inactive'  for student_name in students_activeness1 if students_activeness1[student_name] == 'inactive'}
+
+active_students_vR = {name: activeness for name, activeness in students_activeness1.items() if activeness == "active"}
+
+actives = {}
+for name, activeness in students_activeness1.items():
+    if activeness == "active":
+        actives[name] = activeness
+print(actives)
+
+# print(active_students)
+# print(inactive_students)
+# print(students_activeness1)
+
+
+
+# print(student_info)
+
+# students_activeness = {}
+
+# for student_name in student_info:
+#     if student_info[student_name] > 5:
+#         students_activeness[student_name] = 'active'
+#     else:
+#         students_activeness[student_name] = 'inactive'
+
+# print(students_activeness)
+# # print(student_info)
+
+
+# student_name : is_active
+# print(days_since_last_login)

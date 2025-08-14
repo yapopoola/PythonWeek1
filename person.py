@@ -596,39 +596,141 @@ We want to create a dict that looks like this from the list we have above.
 #     elif every_num % 2 == 0:
 #         print (dict(f'{every_num}: even'))
     
-numbers1_to_20 = list(range(1, 21))
+# numbers1_to_20 = list(range(1, 21))
 
-num_dict = {}
+# num_dict = {}
 
-for every_num in numbers1_to_20:
-    if every_num % 2 != 0:
-        num_dict[every_num] = "odd"
-    else:
-        num_dict[every_num] = "even"
-# print (num_dict)
+# for every_num in numbers1_to_20:
+#     if every_num % 2 != 0:
+#         num_dict[every_num] = "odd"
+#     else:
+#         num_dict[every_num] = "even"
+# # print (num_dict)
 
-'''From the now populated num_dict, using a for loop, 
-create a new dictionary called "evens_and_odds" such that 
-the new dictionary shall now look like the below dict
-{
-"odd": [1,3,5,7,9,11,13,15,17,19],
-"even": [2,4,6,8,10,12,14,16,18,20]'''
+# '''From the now populated num_dict, using a for loop, 
+# create a new dictionary called "evens_and_odds" such that 
+# the new dictionary shall now look like the below dict
+# {
+# "odd": [1,3,5,7,9,11,13,15,17,19],
+# "even": [2,4,6,8,10,12,14,16,18,20]'''
 
-import pprint
-evens_and_odds = {'odd': [], 'even': []}
-for key in num_dict:
-    if num_dict[key] == "odd":
-        evens_and_odds['odd'].append(key)
-    else:
-        evens_and_odds['even'].append(key)
+# import pprint
+# evens_and_odds = {'odd': [], 'even': []}
+# for key in num_dict:
+#     if num_dict[key] == "odd":
+#         evens_and_odds['odd'].append(key)
+#     else:
+#         evens_and_odds['even'].append(key)
 # pprint.pprint(evens_and_odds)
 
 
-numbers1_to_20 = list(range(1, 21))
-numbers_dict = {'even':[] , 'odd':[]}
-for numbers in numbers1_to_20:
-    if numbers % 2 == 0:
-        numbers_dict['even'].append(numbers)
-    else:
-        numbers_dict['odd'].append(numbers)
-pprint.pprint(numbers_dict)
+# numbers1_to_20 = list(range(1, 21))
+# numbers_dict = {'even':[] , 'odd':[]}
+# for numbers in numbers1_to_20:
+#     if numbers % 2 == 0:
+#         numbers_dict['even'].append(numbers)
+#     else:
+#         numbers_dict['odd'].append(numbers)
+# pprint.pprint(numbers_dict)
+
+
+# tuple_example = range(1, 10)
+# # for t in tuple_example:
+#     # print(t * 2)
+
+# t_e = tuple( t  for t in tuple_example)
+# print(t_e)
+
+# '''
+# Given a string name, generate a dictionary that shows each character in that string and their respective counts as the values.
+# For example, if name is Yusufu, your generated dict should be 
+# Python'''
+# {
+#     "Y": 1,
+#     "u": 3,
+#     "s": 1,
+#     "f": 1
+# }
+
+# name = input('Type your name: ')
+# name_dict = {}
+
+# for alphabet in name:
+#     # finding the alphabet for the first time, add to the new dict
+#     if alphabet not in name_dict.keys():
+#         name_dict[alphabet] = 1
+            
+#     # finding the alphabet for the subsequent times, add to the new dict(alphabet) e.g each alphabet
+#     else:
+#         name_dict[alphabet] += 1
+
+# print(name_dict)
+
+
+student_info = {
+    "Gabriella": 5,
+    "Paul": 20,
+    "Jack": 3,
+    "Bond": 1,
+    "Ahmed": 10,
+    "Tiara": 2,
+    "Kaitlyn": 6,
+    "Lucy": 4
+}
+
+# students_activeness = student_info.copy()
+
+# for student_name in students_activeness:
+#     if students_activeness[student_name] > 5:
+#         students_activeness[student_name] = 'active'
+#     else:
+#         students_activeness[student_name] = 'inactive'
+
+# print(students_activeness)
+
+
+
+# students_activeness = student_info.copy()
+
+# for student_name, days_since_last_login in students_activeness.items():
+#     if days_since_last_login > 5:
+#         students_activeness[student_name] = 'active'
+#     else:
+#         students_activeness[student_name] = 'inactive'
+
+
+students_activeness1 = {student_name:'active' if days_since_last_login > 5  else 'inactive'  for student_name, days_since_last_login in student_info.items() }
+# {'Gabriella': 'inactive', 'Paul': 'active', 'Jack': 'inactive', 'Bond': 'inactive', 'Ahmed': 'active', 'Tiara': 'inactive', 'Kaitlyn': 'active', 'Lucy': 'inactive'}
+active_students = {student_name:'active'  for student_name in students_activeness1 if students_activeness1[student_name] == 'active'}
+inactive_students =  {student_name:'inactive'  for student_name in students_activeness1 if students_activeness1[student_name] == 'inactive'}
+
+active_students_vR = {name: activeness for name, activeness in students_activeness1.items() if activeness == "active"}
+
+actives = {}
+for name, activeness in students_activeness1.items():
+    if activeness == "active":
+        actives[name] = activeness
+print(actives)
+
+# print(active_students)
+# print(inactive_students)
+# print(students_activeness1)
+
+
+
+# print(student_info)
+
+# students_activeness = {}
+
+# for student_name in student_info:
+#     if student_info[student_name] > 5:
+#         students_activeness[student_name] = 'active'
+#     else:
+#         students_activeness[student_name] = 'inactive'
+
+# print(students_activeness)
+# # print(student_info)
+
+
+# student_name : is_active
+# print(days_since_last_login)
