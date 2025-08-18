@@ -1,5 +1,9 @@
-# numbers = list(range(1, 11))
-# squares = [num ** 2 for num in numbers]
+from pprint import pprint
+from collections import Counter
+
+
+numbers = list(range(1, 11))
+squares = [num ** 2 for num in numbers]
 
 # print(squares)
 

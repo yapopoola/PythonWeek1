@@ -1,16 +1,16 @@
-# days = {
-#     'Monday': 'Ojo Aje', 
-#     'Tuesday': 'Ojo Isegun', 
-#     'Wednesday': 'Ojoru', 
-#     'Thursday': 'Ojobo', 
-#     'Friday': 'Ojo eti', 
-#     'Saturday': 'Ojo abameta', 
-#     'Sunday': 'Ojo Aiku'
-# }
+days = {
+    'Monday': 'Ojo Aje', 
+    'Tuesday': 'Ojo Isegun', 
+    'Wednesday': 'Ojoru', 
+    'Thursday': 'Ojobo', 
+    'Friday': 'Ojo eti', 
+    'Saturday': 'Ojo abameta', 
+    'Sunday': 'Ojo Aiku'
+}
 
-# user_input = input('Enter day of the week: ').capitalize()
+user_input = input('Enter day of the week: ').capitalize()
 
-# print(days.get(user_input, "No such day exist in the English Language."))
+print(days.get(user_input, "No such day exist in the English Language."))
 
 
 """
