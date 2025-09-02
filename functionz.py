@@ -1,4 +1,3 @@
- 
 '''
 Write a basic login program in Python that takes in a username and a password.
 Your programs database is a Python dictionary containing all usernames and their respective passwords.
@@ -59,7 +58,7 @@ def user_login():
         print("Incorrect username provided!")
 
 
-def basic_function():
+def basic_function() -> str:
     return "Hi! I was called"
 
 
@@ -208,4 +207,4 @@ is_greater_than_nine = lambda number1, number2: (number1 + number2) > 9
 participants = [("Yusuf", "Popoola"), ("Rafi", "Bello"), ("Adams", "Oshiomole"), ("Bola", "Tinubu")]
 
 participants.sort(key=lambda each_name_group: each_name_group[0])
-print(participants)
+# print(participants)

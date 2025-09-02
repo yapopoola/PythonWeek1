@@ -99,8 +99,8 @@
 #     print ('Now Checking', tool)
 #     print ('Done Checking')
 
-# def greet ():
-#     print('Hello!')
+def greet ():
+    print('Hello!')
 
 # greet()
 
