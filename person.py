@@ -699,18 +699,18 @@ student_info = {
 #         students_activeness[student_name] = 'inactive'
 
 
-students_activeness1 = {student_name:'active' if days_since_last_login > 5  else 'inactive'  for student_name, days_since_last_login in student_info.items() }
-# {'Gabriella': 'inactive', 'Paul': 'active', 'Jack': 'inactive', 'Bond': 'inactive', 'Ahmed': 'active', 'Tiara': 'inactive', 'Kaitlyn': 'active', 'Lucy': 'inactive'}
-active_students = {student_name:'active'  for student_name in students_activeness1 if students_activeness1[student_name] == 'active'}
-inactive_students =  {student_name:'inactive'  for student_name in students_activeness1 if students_activeness1[student_name] == 'inactive'}
+# students_activeness1 = {student_name:'active' if days_since_last_login > 5  else 'inactive'  for student_name, days_since_last_login in student_info.items() }
+# # {'Gabriella': 'inactive', 'Paul': 'active', 'Jack': 'inactive', 'Bond': 'inactive', 'Ahmed': 'active', 'Tiara': 'inactive', 'Kaitlyn': 'active', 'Lucy': 'inactive'}
+# active_students = {student_name:'active'  for student_name in students_activeness1 if students_activeness1[student_name] == 'active'}
+# inactive_students =  {student_name:'inactive'  for student_name in students_activeness1 if students_activeness1[student_name] == 'inactive'}
 
-active_students_vR = {name: activeness for name, activeness in students_activeness1.items() if activeness == "active"}
+# active_students_vR = {name: activeness for name, activeness in students_activeness1.items() if activeness == "active"}
 
-actives = {}
-for name, activeness in students_activeness1.items():
-    if activeness == "active":
-        actives[name] = activeness
-print(actives)
+# actives = {}
+# for name, activeness in students_activeness1.items():
+#     if activeness == "active":
+#         actives[name] = activeness
+# print(actives)
 
 # print(active_students)
 # print(inactive_students)
@@ -734,4 +734,479 @@ print(actives)
 
 # student_name : is_active
 # print(days_since_last_login)
+
+# def narcissistic(number):
+#     number = str(number)
+#     total_num = 0
+#     # want to check if the number would be equal to itself, if yes then return true
+#     for num in number:
+#         number_power = int(num) ** len(number)
+#         total_num += number_power
+#     print(total_num)
+#     if total_num == int(number):
+#         return True
+#     # want to check if the number would not be equal to itself, if yes then return false
+#     else:
+#         return False
+    
+    
+# print(narcissistic(7))
+
+def summation(num):
+    output = 0
+    for every_num in range(1, num+1):
+        output += every_num
+    return output
+
+# print(summation(9))
+    
+
+# def to_alternating_case(string: str):
+#     new_str = ""
+#     for every_letter in string:
+#         if every_letter.lower():
+#             return new_str.upper
+#         elif every_letter.upper():
+#             return every_letter.lower()
+#         return every_letter
+
+
+    
+
+# def to_alternating_case(string: str):
+#     new_str = ""
+#     for every_char in string:
+#         # if that char is lower, add its upper version to new string.
+#         if every_char == every_char.lower():
+#             new_str = new_str +  every_char.upper()
+#         else:
+#             new_str = new_str + every_char.lower()
+    
+#     return new_str
+
+
+# def to_alternating_case(string: str):
+#     string = list(string)
+#     for index in range(0, len(string)):
+#         if string[index] == string[index].lower():
+#             string[index] = string[index].upper()
+#         else:
+#             string[index] = string[index].lower()
+
+#     return "".join(string)
+
+
+# print(to_alternating_case("hello wORld"))
+
+
+# def unusual_five():
+#     my_dict = {"five" : 5}
+#     return my_dict["five"]
+
+'''
+Two objects that return a one word name in response to the first letter of the first name and one for the first letter of the surname are already given. 
+See the examples below for further details.
+If the first character of either of the names given to the function is not a letter from A - Z, you should return "Your name must start with a letter from A - Z."
+Sometimes people might forget to capitalize the first letter of their name so your function should accommodate for these grammatical errors.'''
+# These two dictionaries are preloaded, you need to use them in your code
+# FIRST_NAME = {'A': 'Alpha', 'B': 'Beta', 'C': 'Cache'}
+# SURNAME = {'A': 'Analogue', 'B': 'Bomb', 'C': 'Catalyst'}
+
+# # alias_gen('Larry', 'Brentwood') == 'Logic Bomb'
+# # alias_gen('123abc', 'Petrovic') == 'Your name must start with a letter from A - Z.'
+
+# # from preloaded import FIRST_NAME, SURNAME
+
+
+
+# def alias_gen(f_name: str, l_name: str) -> str:
+#     f_name = f_name.capitalize() 
+#     l_name = l_name.capitalize()
+#     if f_name[0] in FIRST_NAME.keys() and l_name[0] in SURNAME.keys():
+#         return f'{FIRST_NAME[f_name[0]]} {SURNAME[l_name[0]]}'
+    
+#     else:
+#         return "Your name must start with a letter from A - Z."
+            
+
+# print(alias_gen("ade", "bayo"))
+
+# def hex_to_dec(s):
+#     s = int(s, base=16) 
+#     return s
+''''Your task is to find the first element of an array that is not consecutive.
+
+By not consecutive we mean not exactly 1 larger than the previous element of the array.
+
+E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive number.
+
+If the whole array is consecutive then return null2.
+
+The array will always have at least 2 elements1 and all elements will be numbers. 
+The numbers will also all be unique and in ascending order. The numbers could be positive or negative and the first non-consecutive could be either too!'''
+
+arr = [1,2,3,4,5,7,8,9,11]
+arr_2 = []
+# def first_non_consecutive(arr):
+#     cons = True
+#     for every_num in arr:
+#         if arr[0] + 1 == arr[1]:
+#     else:
+#         every_num != cons
+    # print(every_num)
+
+''''Write a function which calculates the average of the numbers in a given array.
+
+Note: Empty arrays should return 0.'''
+
+# def find_average(numbers):
+#     if numbers != []:
+#         average_number = sum(numbers)/len(numbers)
+#         return average_number
+#     else:
+#         return 0
+    
+
+# def find_average(numbers: list) -> int | float:
+#     try:
+#         average = sum(numbers) / len(numbers)    
+#         return average
+#     except:
+#         return 0
+    
+
+# def find_average(numbers):
+#     if numbers:
+#         average = sum(numbers) / len(numbers)    
+#         return average
+#     else:
+#         return 0
+
+# print(find_average(arr_2))
+
+'''When it's spring Japanese cherries blossom, it's called "sakura" and it's admired a lot. The petals start to fall in late April.
+
+Suppose that the falling speed of a petal is 5 centimeters per second (5 cm/s), and it takes 80 seconds for the petal to reach the ground from a certain branch.
+
+Write a function that receives the speed (in cm/s) of a petal as input, and returns the time it takes for that petal to reach the ground from the same branch.
+
+Notes:
+
+The movement of the petal is quite complicated, so in this case we can see the velocity as a constant during its falling.
+Pay attention to the data types.
+If the initial velocity is non-positive, the return value should be 0
+            test.assert_approx_equals(sakura_fall(5), 80)
+            test.assert_approx_equals(sakura_fall(10), 40)
+            test.assert_approx_equals(sakura_fall(-1), 0)'''
+
+# def sakura_fall(speed):
+#     if speed < 0:
+#         return 0
+#     else:
+#         time_taken = 400 / speed
+#         return time_taken
+    
+'''Remove First and Last Character
+Task
+Your goal is to write a function that removes the first and last characters of a string. You're given one parameter, the original string.
+
+Important: Your function should handle strings of any length ≥ 2 characters. For strings with exactly 2 characters, return an empty string.
+
+Examples
+'eloquent' --> 'loquen'
+'country'  --> 'ountr' 
+'person'   --> 'erso'
+'ab'       --> '' (empty string)
+'xyz'      --> 'y'
+Requirements
+The input string will always have at least 2 characters
+For strings with exactly 2 characters, return an empty string
+For strings with 3 or more characters, remove the first and last character
+The function should handle strings containing letters, numbers, and special characters'''
+
+# def remove_char(string_given):
+#     if len(string_given) == 2:
+#         return ""
+#     if len(string_given) >= 3:
+#         return string_given[1:-1]
+
+# print(remove_char('string!000444'))
+
+'''2(lw + wh + lh)
+Write a function that returns the total surface area and volume of a box.
+
+The given input will be three positive non-zero integers: width, height, and depth.
+
+The output will be language dependant, so please check sample tests for the corresponding data type, (list, tuple, struct, query, etcetera).
+'''
+
+# def get_size(w,h,l):
+#     TSA = 2 * (l*w + w*h + l*h)
+#     VB = l * h * w
+#     return [TSA, VB]
+
+# print(get_size(7,17,111))
+
+'''You are given two sorted arrays that contain only integers. These arrays may be sorted in either ascending or descending order. 
+Your task is to merge them into a single array, ensuring that:
+
+The resulting array is sorted in ascending order.
+
+Any duplicate values are removed, so each integer appears only once.
+
+If both input arrays are empty, return an empty array.
+
+No input validation is needed, as both arrays are guaranteed to contain zero or more integers.
+
+Examples (input -> output)
+* [1, 2, 3, 4, 5], [6, 7, 8, 9, 10] -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+* [1, 3, 5, 7, 9], [10, 8, 6, 4, 2] -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+* [1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12] -> [1, 2, 3, 4, 5, 7, 9, 10, 11, 12]
+Happy coding!'''
+# arr1 = [11,33, 21, 3, 4, 5]
+# arr2 = [33, 7, 2, 9, 10, 3]
+
+# def merge_arrays(arr1, arr2):
+#     '''create an empty array where it will be merged
+#     add both arrays to the empty array
+#     change it to set to remove duplication
+#     then sort in ascending order'''
+#     arr3 = arr1 + arr2
+#     arr3 = set(arr3)
+#     arr3 = list(arr3)
+#     arr3.sort()
+#     return arr3
+
+# print(merge_arrays(arr1, arr2))
+
+'''When provided with a number between 0-9, return it in words. Note that the input is guaranteed to be within the range of 0-9.
+Input: 1
+Output: "One".
+If your language supports it, try using a switch statement.
+'''
+
+# def switch_it_up(number):
+#     if number == 0:
+#         return "Zero"
+#     if number == 1:
+#         return "One"
+#     if number == 2:
+#         return "Two"
+#     if number == 3:
+#         return "Three"
+#     if number == 4:
+#         return "Four"
+#     if number == 5:
+#         return "Five"
+#     if number == 6:
+#         return "Six"
+#     if number == 7:
+#         return "Seven"
+#     if number == 8:
+#         return "Eight"
+#     if number == 9:
+#         return "Nine"
+# def switch_it_up(number):
+#     numbers = {0: "Zero", 1: "One", 2:"Two", 3:"Three", 4:"Four", 5:"Five", 6:"Six", 7:"Seven", 8:"Eight", 9: "Nine"}
+#     return numbers[number]
+
+# def switch_it_up(number):
+#     match number: 
+#         case 0: return "Zero"
+#         case 1: return "One"
+#         case 2: return "Two"
+#         case 3: return "Three"
+#         case 4: return "Four"
+#         case 5: return "Five"
+#         case 6: return "Six"
+#         case 7: return "Seven"
+#         case 8: return "Eight"
+#         case 9: return "Nine"
+# print(switch_it_up(7))
+
+# def sum_mix(arr: list):
+#     arr1 = []
+#     for every_num in arr:
+#         every_num = int(every_num)
+#         arr1.append(every_num)
+#     return sum(arr1)
+
+#     return (sum([int(every_num) for every_num in arr]))
+
+# print(sum_mix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']))
+# print(sum_mix(['3', 9, 6, 0, '5', 8, 5, '6', 2,'0']))
+# print(sum_mix(['3', 2, 6, 0, '5', 8, 5, '6', 2,'0']))
+# print(sum_mix(['3', 9, 6, 0, '5', 8, 5, '6', 2,'0']))
+# print(sum_mix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']))
+
+# print(list(map(sum_mix, [['3', 6, 6, 0, '5', 8, 5, '6', 2,'0'], ['3', 9, 6, 0, '5', 8, 5, '6', 2,'0'], ['3', 2, 6, 0, '5', 8, 5, '6', 2,'0']])))
+# sum = list(range(2,9,2))
+# print(sum)
+
+# def sum_mul(n, m):
+#     sums = list(range(n,m,n))
+#     return sum(sums)
+# def calculator(a, b, op):
+#     # check if a and b are int or float using type()
+#     if not (type(a) in [int, float] and type(b) in [int, float]):
+
+#     # if not (isinstance(num1, (int, float)) and isinstance(num2, (int, float))):
+#         return "unknown value"
+
+#         return "unknown value"
+    
+#     else:
+#         return "unknown value"
+
+#     abc = [1, 'ade', 1.6, True]
+
+# print(isinstance(2, (int, float)))
+# print(isinstance("what is my name?", (dict,)))
+# type1 = [int, float]
+# print(type(2))
+# a = 2
+# b = 6
+# op = "*"
+# evaluated_code = eval(f"a op b")
+
+# print(evaluated_code)
+'''For this problem you must create a program that says who ate the last cookie. If the input is a string then "Zach" ate the cookie. If the input is a float or an int then 
+"Monica" ate the cookie. If the input is anything else "the dog" ate the cookie. The way to return the statement is: "Who ate the last cookie? It was (name)!"
+
+Ex: Input = "hi" --> Output = "Who ate the last cookie? It was Zach! (The reason you return Zach is because the input is a string)
+
+Note: Make sure you return the correct message with correct spaces and punctuation.
+
+Please leave feedback for this kata. Cheers!
+
+'''
+# def cookie(x):
+#     if type(x) == str:
+#         x = "Zach"
+#     elif type(x) == int or type(x) == float:
+#         x = "Monica"
+#     else:
+#         x = "the dog"
+        
+#     return f"Who ate the last cookie? It was {x}!"
+    
+# print(cookie([1,1,2]))
+
+# def cookie(x):
+#     if type(x) == str:
+#         suffix = "Zach!"
+#     elif isinstance(x, (float, int)):
+#         suffix = "Monica!"
+#     else:
+#         suffix = "the dog!"
+
+#     return f"Who ate the last cookie? It was {suffix}!"
+    
+# print(cookie([1,1,2]))
+
+'''You have to create a function named reverseIt.
+
+Write your function so that in the case a string or a number is passed in as the data , you will return the data in reverse order. If the data is any other type, return it as it is.
+
+Examples of inputs and subsequent outputs:
+
+"Hello" -> "olleH"
+
+"314159" -> "951413"
+
+[1,2,3] -> [1,2,3]'''
+
+# def reverse_it(data):
+#     if type(data) == str:
+#         return data[::-1]
+#     elif type(data) == int:
+#         data = str(data)
+#         data = data[::-1]
+#         return int(data)
+#     elif type(data) == float:
+#         data = str(data)
+#         data = data[::-1]
+#         return float(data)
+#     else:
+#         return data
+
+
+    
+# def reverse_it(data):
+#     original_datatype = type(data)
+#     if type(data) == str:
+#         return data[::-1]
+#     elif type(data) == int or type(float):
+#         data = str(data)
+#         data = data[::-1]
+#         return original_datatype(data)
+#     else:
+#         return data
+    
+# print(reverse_it(456.8))
+'''This is a spin off of my first kata.
+
+You are given a string containing a sequence of character sequences separated by commas.
+
+Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+
+If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+
+Examples
+"1,2,3"      =>  "2"
+"1,2,3,4"    =>  "2 3"
+"1,2,3,4,5"  =>  "2 3 4"
+
+""     =>  NULL
+"1"    =>  NULL
+"1,2"  =>  NULL'''
+
+# def array(string: str):
+#     if len(string) <= 3:
+#         return None
+#     else:
+#         string = string[1:-1]
+#         string = string.split(',')[1:-1]
+#         return " ".join(string)
+
+# def array(string: str):
+#     if len(string) <= 3:
+#         return None
+#     else:
+#         string = string[1:-1]
+#         string = string.split(',')[1:-1]
+#         result = " ".join(string)
+#         if result == "":
+#             return None
+#         else:
+#             return result
+        
+
+# def array(string: str):
+#     result = " ".join(string.replace(",", " ").split()[1:-1])
+#     return result or None
+
+# print(len(array("1,2,3,4,5")))
+# print(len(array("")))
+# print(array("3445671"))
+
+# def who_is_paying(name):
+#     short_name = name[0:2]
+#     if len(name) == 2:
+#         return [short_name]
+#     elif len(name) <= 2:
+#         return [name]
+#     else: return [name, short_name]
+
+# print(who_is_paying("M"))
+
+# def ensure_question(s: str):
+#     if s.endswith('?'):
+#         return s
+#     else:
+#         return s + '?'
+
+
 
