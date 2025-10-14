@@ -20,8 +20,8 @@ complex_days = 1j
 # print(round(float_days))
 
 
-addition = days + float_days
-subtraction = days - float_days
+addition = days + float_days   # days.__add__(float_days)
+subtraction = days - float_days # days.__sub__(float_days)
 multiplication = days * float_days
 division = days / float_days
 rounded_div = days // float_days

@@ -27,6 +27,7 @@ user_db = {
         "user10": "pass10"
     }
 
+
 def user_login():
     
     attempts = 0
@@ -113,8 +114,6 @@ def is_number_odd_and_prime(number):
 
     elif number % 2 == 0:
         return f"The number `{number}` is even" 
-
-    
     # check if any of the numbers smaller than it can divide it without remainder.
     # If it can be divided without remainder, then that number is not prime.
     else:
