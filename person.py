@@ -1208,5 +1208,1306 @@ Examples
 #     else:
 #         return s + '?'
 
+# print(tuple[1:3] if tuple == ( 'abcd', 786 , 2.23, 'john', 70.2 ) else tuple())
+'''You receive the direction you are facing (one of the 8 directions: N, NE, E, SE, S, SW, W, NW) and a certain degree to turn (a multiple of 45, between -1080 and 1080); 
+positive means clockwise, and negative means counter-clockwise.
+Return the direction you will face after the turn.
+Examples
+"S",  180  -->  "N"
+"SE", -45  -->  "E"
+"W",  495  -->  "NE"
+'''
+# def direction(facing, turn):
+#     # facing = {"N":0, "NE":45, "E":90, "SE":135, "S":180, "SW":225, "W":270, "NW":315}
+#     positions =  ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+#     number_of_times_to_move = abs(turn // 45)
+#     start_position = positions.index(facing)
+#     if str(turn).startswith("-"):
+#         current_position = start_position - number_of_times_to_move
+#     else:
+#         current_position = start_position + number_of_times_to_move
+#     try:
+#         final_facing = positions[current_position]
+#         return final_facing
+#     except IndexError:
+#         increase_list_by = (number_of_times_to_move // len(positions) ) + 2   # ADDING 1 JUST TO BE SAFE
+#         print(increase_list_by)
+#         positions = positions * increase_list_by
+#         print(positions)
+        # final_facing = positions[current_position]
+        # return final_facing
+    # finally:
+    #     return final_facing
 
 
+    
+# print(direction("S", 180))
+# print(['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'] * 4)
+# print(direction("SE", -45))
+# print(direction("W", 495))
+    
+        
+# def get_new_direction(current, degrees):
+#     directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+#     pos = directions.index(current)
+#     turns = degrees // 45
+#     new_pos = (pos + turns) % 8
+#     return directions[new_pos]
+
+# # Test cases
+# print(get_new_direction("S", 180))    # "N"
+# print(get_new_direction("SE", -45))   # "E"
+# print(get_new_direction("W", -1085))    # "NE"
+
+# new_pos = 7 % 8
+# print(new_pos)
+# middle = (x for x in 'Geeks 22966 for Geeks' if x.isdigit())
+# middle = ("2", "2", "9", "6", "6")
+# last = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+# a = [x for x in middle if x in last] 
+# # a = []
+# print(a)
+# text = "hello wor\tld, \thello Python"
+# result = text.count('')
+# print(result), print(text)
+# print(len(text))           # Output: 2
+
+# print(text.expandtabs(1))
+
+
+# my_message = "Hi Lagbaja, I have called my motherly and my x-rays and I have also called my two brothers. I miss them so much"
+
+# decoder = str.maketrans(
+#     "a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z", 
+#     "x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x, x+ x"
+#     # "called": "opened",
+#     # "motherly": "assembly",
+#     # "my": "the",
+#     # "father": "x-rays", 
+#     # "brothers": "minister",
+#     # "miss": "need",
+# )
+
+# print(my_message.translate(decoder))
+
+# # s = 'geeks' 
+# a, b, c, d, e = "geeks"
+# # b = c = '*'
+# # s = (a, b, c, d, e) 
+# print(a) 
+
+# tup = (2e-04, True, False, 8, 1.001, True)
+# val = 0
+# for x in tup:
+#     val += int(x)
+# print(val)
+
+'''Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+
+For example:
+
+a = 1
+b = 4
+--> [1, 2, 3, 4]'''
+
+# def between(a,b):
+#     return list(range(a,b+1))
+
+# print(between(-2,3))
+
+'''Define a method hello that returns "Hello, Name!" to a given name, or says Hello, World! if name is not given (or passed as an empty String).
+
+Assuming that name is a String and it checks for user typos to return a name with a first capital letter (Xxxx).
+
+Examples:
+
+* With `name` = "john"  => return "Hello, John!"
+* With `name` = "aliCE" => return "Hello, Alice!"
+* With `name` not given 
+  or `name` = ""        => return "Hello, World!"'''
+
+# def hello(name: str | None = ""):
+#     if name == "":
+#         return "Hello, World!"
+#     return f"Hello, {name.capitalize()}!"
+# d = dict() 
+# for x in enumerate(range(2)): 
+# 	d[x[0]] = x[1]
+#     d[(0,0)[0]] = (0,0)[1]
+#     d[0] = 0 
+# 	d[x[1]+7] = x[0]
+#     d[(0,0)[1] + 7] = (0,0)[0]
+#     d[7] = 0
+# print(list(enumerate(range(2))))
+# print(x[1])
+# print(x)
+
+# dict ={} 
+# print (any([1,4,5,6,7,8,9,'d,d', None, False])) 
+
+# a = {} 
+# a.fromkeys(['a', 'b', 'c', 'd'], 98) 
+# print (a) 
+# d = {1 : [1, 2, 3], 2: (4, 6, 8)} 
+# d[1].append(4) 
+# print(d[1], end = " ") 
+# li = [d[2]]
+# li.append(10) 
+# d[2] = tuple(li) 
+# print(d[2]) 
+'''d = {
+    1 : {'A' : {1 : "A"}, 2 : "B"}, 
+    3 :"C", 
+    'B' : "D", 
+    "D": 'E'
+    } 
+print(d[d[d[1][2]]], end = " ") # E
+print(d[d[1]["A"][2]]) 
+
+d[
+    d[1]["A"][2]
+]
+'''
+# def func(a, b=[]):
+#     b.append(a)
+#     return
+
+# print(func(1))
+# print(func(2))
+
+# import os 
+# cwd = os.getcwd() 
+# print("Current working directory:", cwd)
+
+'''Create a function that takes an input String and returns a String, where all the uppercase words of the input String are in front and all the lowercase words at the end. 
+The order of the uppercase and lowercase words should be the order in which they occur.
+If a word starts with a number or special character, skip the word and leave it out of the result.
+Input String will not be empty.
+For an input String: "hey You, Sort me Already!" the function should return: "You, Sort Already! hey me
+("123 baby You and Me"), "You Me baby and"), 
+text = 'gA8y8dYh m_rqXj;q ??Pe[;S3 |f73FBDK CMfsfv5@'
+'gA8y8dYh m_rqXj;q ??Pe[;S3 |f73FBDK CMfsfv5@' should equal 'CMfsfv5@ gA8y8dYh m_rqXj;q'"'''
+
+# def capitals_first(text: str) -> str:
+#     uppercase = []
+#     lowercase = []
+#     for word in text.split():
+#         if not word[0].isalpha():
+#             pass
+#         else:
+#             if word[0].isupper():
+#                 uppercase.append(word)
+#             else:
+#                 lowercase.append(word)
+
+#     return (" ".join(uppercase) + " " + " ".join(lowercase)).strip()
+
+
+    # else:
+    #     for every_char in text:
+    #         if every_char[]:
+
+
+    #     text = text.split()
+    #     uppercase = text.upper()
+    #     lowercase = text.lower()
+    #     return " ".join(uppercase) + " ".join(lowercase)
+
+
+# print(capitals_first('  hey You, Sort me Already!'))   
+
+'''Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+
+Example:
+["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+
+None of the arrays will be empty, so you don't have to worry about that!'''
+
+# def remove_every_other(my_list):
+#     return my_list[::2]
+
+# print(remove_every_other([1,2,3,4,5,6,7,8,9,10]))
+'''Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+Example (Input => Output):
+35231 => [1,3,2,5,3]
+0     => [0]'''
+# na = 12345
+# def digitize(n):
+#     n = str(n)
+#     n[::-1]
+#     " ".join(n)
+
+# print(digitize(na))
+# def digitize(n):
+#     n = str(n)
+#     n = n[::-1]
+#     n = list(n)
+#     na = []
+#     for element in n:
+#         element = int(element)
+#         na.append(element)
+#     return na
+
+# def digitize(n):
+#     return [int(element) for element in str(n)[::-1]]
+
+'''We all love to have some rest. Also we all hate the sound of our alarms but it's inevitable at the end of the day. 
+However, one is definitely not enough to wake you up. You set multiple alarms, just to force yourself to get up and go back to work/studies or just anything.
+It is getting annoying, setting those up manually, so you decide to write a script for this task.
+Task
+Given the time to be set to wake up and the amount of alarms needed to be set, return an array of all timestamps for the alarms. 
+The typical interval between the alarms is 5 minutes (at least, I think so).
+
+Examples
+set_the_alarms_up("08:00", 5) # Should return ["08:00", "08:05", "08:10", "08:15", "08:20"]
+set_the_alarms_up("07:45", 8) # Should return ["07:45", "07:50", "07:55", "08:00", "08:05", "08:10", "08:15", "08:20"]
+set_the_alarms_up("23:55", 2) # Should return ["23:55", "00:00"]
+Input
+time - a string, representing the time. Will always be valid. (no 25:30, 08:65 and etc.)
+
+n - a number of alarms, needed to be set up. (n > 1, simply cause noone wakes up to one alarm)
+
+Output
+An array, consisting of all timestamps, an alarm is going to ring.
+
+
+Good luck!'''
+# 
+# first, second = [1, 3, 5], [2, 4, 6]
+# def merge_arrays(first, second):
+#     first.extend(second)
+#     first.sort()
+#     return first
+
+# print(merge_arrays([1, 3, 5], [2, 4, 6]))
+
+# first = [1, 3, 5, 5]
+# second = [2, 4, 6, 1]
+'''Write a function that merges two sorted arrays into a single one. 
+The arrays only contain integers. Also, the final outcome must be sorted and not have any duplicate.'''
+
+# def merge_arrays(first, second):
+#     first.extend(second)
+#     first = set(first)
+#     first = list(first)
+#     first.sort()
+#     return first
+
+# def merge_arrays(first, second):
+#     first.extend(second)
+#     return sorted(set(first))
+
+    
+
+# print(merge_arrays([1, 3, 5, 5, 5], [2, 4, 6, 1, 3, 5]))
+
+# def count_sheeps(sheep: list) -> int:
+#     sheeps = []
+#     for every_sheep in sheep:
+#         if every_sheep == True:
+#             sheeps.append(every_sheep)
+#     return len(sheeps)
+
+    # return len([every_sheep for every_sheep in sheep if every_sheep])
+        
+        
+
+# print(count_sheeps([True,  True,  True,  False,
+#   True,  True,  True,  True ,
+#   True,  False, True,  False,
+#   True,  False, False, True ,
+#   True,  True,  True,  True ,
+#   False, False, True,  True]))
+
+# def count_sheeps(sheep: list) -> int:
+#     sheeps = 0
+#     for every_sheep in sheep:
+#         if every_sheep is True:
+#             sheeps += 1
+#     return sheeps
+        
+
+# print(count_sheeps([True,  True,  True,  False,
+#   True,  True,  True,  True ,
+#   True,  False, True,  False,
+#   True,  False, False, True ,
+#   True,  True,  True,  True ,
+#   False, False, True,  True]))
+            
+
+
+'''Your Task
+Given an array of Boolean values and a logical operator, return a Boolean result based on sequentially applying the operator to the values in the array.
+
+Examples
+booleans = [True, True, False], operator = "AND"
+True AND True -> True
+True AND False -> False
+return False
+booleans = [True, True, False], operator = "OR"
+True OR True -> True
+True OR False -> True
+return True
+booleans = [True, True, False], operator = "XOR"
+True XOR True -> False
+False XOR False -> False
+return False
+Input
+an array of Boolean values (1 <= array_length <= 50)
+a string specifying a logical operator: "AND", "OR", "XOR"
+Output
+A Boolean value (True or False).
+'''
+# def logical_calc(array, op):
+#     if op != "XOR":
+#         op = op.lower()
+#     else:
+#         op = "^"
+        
+#     statement = f" {op} ".join([str(i) for i in array])
+#     return eval(statement)
+        
+#     return eval(f" {op.lower() if op != 'XOR' else '^'} ".join([str(i) for i in array]))
+
+# or |, and &&, xor ^
+'''You love coffee and want to know what beans you can afford to buy it.
+
+The first argument to your search function will be a number which represents your budget.
+
+The second argument will be an array of coffee bean prices.
+
+Your 'search' function should return the stores that sell coffee within your budget.
+
+The search function should return a string of prices for the coffees beans you can afford. The prices in this string are to be sorted in ascending order.
+(3, [6, 1, 2, 9, 2], "1,2,2"),
+(14, [7, 3, 23, 9, 14, 20, 7], "3,7,7,9,14"),
+(0, [6, 1, 2, 9, 2], ""),
+(10, [], ""),
+(10, [0, 0, 0], "0,0,0"),
+(0, [0, 0, 0], "0,0,0"),
+(24, [24, 0, 100, 2, 5], "0,2,5,24"),
+(24, [2.7, 0, 100.9, 1, 5.5], "0,1,2.7,5.5"),
+(-1, [1, 2, 3, 4], ""),
+(-1, [-1, 0, 1, 2, 3, 4], "-1"),
+(14, [17, 33, 23, 19, 19, 20, 17], ""),
+(14, [13, 15, 14, 14, 15, 13], "13,13,14,14"),
+'''
+
+# def search(budget, prices):
+#     prices = sorted(prices, reverse=True)
+#     first_index = prices.index(budget)
+#     valid_beans = prices[first_index:]
+#     valid_prices = sorted(valid_beans)
+#     valid_prices = str(valid_prices)[1:-1].replace(" ", "")
+#     # valid_prices = "".join((valid_prices))
+#     return valid_prices
+    # last_index = prices.index(budget)
+    # # budget = range(0, budget + 1)
+    # prin
+    # prices = sorted(prices[:budget])
+    # return prices
+
+
+# def search(budget, prices):
+#     valid_prices = []
+#     for each_price in prices:
+#         if each_price <= budget:
+#             valid_prices.append(str(each_price))
+
+#     valid_prices = sorted(valid_prices)
+#     final_answer = ",".join(valid_prices)
+#     return final_answer
+
+
+# def search(budget, prices):
+#     return ",".join(sorted([str(price) for price in prices if price <= budget], key=lambda val: int(val)))
+
+# print(search(14, [7, 3, 23, 9, 14, 20, 7]))
+
+
+# my_list = [13, 13, 14, 14]
+
+# str(my_list)  # --> "[13, 13, 14, 14]"
+
+# answer = [str(every_num) for every_num in my_list]  # --> ["13", "13", "14", "14"]
+
+# new_list = []
+# for every_num in my_list:
+#     new_list.append(str(every_num))
+
+'''reverse_by_center("secret")  == "retsec" # no center character
+reverse_by_center("agent")   == "nteag"  # center character is "e"'''
+
+# def reverse_by_center(word):
+#     if len(word) % 2 == 0:
+#         mid_index = int(len(word) / 2)
+#         first_half = word[:mid_index]
+#         second_half = word[mid_index:]
+#         return second_half + first_half
+#     else:
+#         mid_index = len(word) // 2
+#         first_half = word[:mid_index]
+#         middle_value = word[mid_index]
+#         second_half = word[mid_index + 1:]
+#         return second_half + middle_value + first_half
+
+    # return mid_index
+
+
+# print(reverse_by_center("agent"))
+
+'''Kate and Michael want to buy a pizza and share it. Depending on the price of the pizza, they are going to divide the costs:
+
+If the pizza is less than €5,- Michael invites Kate, so Michael pays the full price.
+Otherwise Kate will contribute 1/3 of the price, but no more than €10 (she's broke :-) and Michael pays the rest.
+How much is Michael going to pay? Calculate the amount with two decimals, if necessary.
+def basic_test_cases():
+        test.assert_equals(michael_pays(15), 10)
+        test.assert_equals(michael_pays(4), 4)
+        test.assert_equals(michael_pays(30), 20)
+        test.assert_equals(michael_pays(80), 70)
+        test.assert_equals(michael_pays(22), 14.67)
+        test.assert_equals(michael_pays(5.9181), 3.95)
+        test.assert_equals(michael_pays(28.789), 19.19)
+        test.assert_equals(michael_pays(4.325), 4.33)'''
+
+# def michael_pays(cost):
+#     # michael_cost = None
+#     # kate_cost = None
+#     if cost < 5: return cost
+#     elif cost * 1/3 <= 10: return round(cost * 2/3, 2)
+#     # else:
+#     #     return cost
+    
+# print((michael_pays(5.9181)))
+
+'''An ATM has banknotes of nominal values 10, 20, 50, 100, 200 and 500 dollars. You can consider that there is a large enough supply of each of these banknotes.
+You have to write the ATM's function that determines the minimal number of banknotes needed to honor a withdrawal of n dollars, with 1 <= n <= 1500.
+Return that number, or -1 if it is impossible.
+Good Luck!!! 
+@test.it("should work when chosing notes is possible")
+def _():
+    test.assert_equals(solve(770), 4, "Wrong result for 770")
+    test.assert_equals(solve(550), 2, "Wrong result for 550")
+    test.assert_equals(solve(10), 1, "Wrong result for 10")
+    test.assert_equals(solve(1250), 4, "Wrong result for 1250")
+
+
+@test.it("should return -1 if chosing notes is not possible")
+def _():
+    test.assert_equals(solve(125), -1, "Wrong result for 125")
+    test.assert_equals(solve(666), -1, "Wrong result for 666")
+    test.assert_equals(solve(42), -1, "Wrong result for 42")
+'''
+# def solve(withdrawal):
+#     banknotes = [10, 20, 50, 100, 200, 500]
+#     if 1 <= withdrawal <= 1500:
+#         banknotes
+'''
+Everybody knows the classic "half your age plus seven" dating rule that a lot of people follow (including myself). It's the 'recommended' age range in which to date someone.
+
+Min
+=
+Age
+2
++
+7
+Min= 
+2
+Age
+​
+ +7
+
+Max
+=
+2
+⋅
+(
+Age - 7
+)
+Max=2⋅(Age - 7)
+
+Minimum age
+≤
+Your age
+≤
+Maximum age
+Minimum age≤Your age≤Maximum age
+
+Task
+Given an integer (1 <= n <= 100) representing a person's age, return their minimum and maximum age range.
+
+This equation doesn't work when the age <= 14, so if the age <= 14, use this equation instead:
+
+min = age - 0.10 * age
+max = age + 0.10 * age
+You should floor all your answers so that an integer is given instead of a float (which doesn't represent age). Return your answer in the form "[min]-[max]"
+
+Examples:
+age = 27   =>   "20-40"
+age = 5    =>   "4-5"
+age = 17   =>   "15-20"
+
+test.assert_equals(dating_range(17), "15-20")
+# '''
+
+
+# def dating_range(age):
+#     if age <= 14:
+#         min = age - 0.10 * age
+#         max = age + 0.10 * age
+#     else:
+#         min = age / 2 + 7
+#         max = 2 * (age - 7)
+#     return f"{int(min)}-{int(max)}"
+
+# print(dating_range(25))
+
+
+# def find_longest(arr):
+#     str_nums = [str(num) for num in arr]
+#     len_nums = [len(num) for num in str_nums]
+#     highest_num_of_digits = max(len_nums)
+#     location_of_highest = len_nums.index(highest_num_of_digits)
+#     return arr[location_of_highest]
+
+# # def find_longest(arr):
+# #     arr.sort(reverse=True) 
+# #     return arr[0]
+
+# print(find_longest([1, 10, 100, 599, -3456, 780, "abcdef" ]))
+
+# def alphabetic(s):
+#     if list(s) != sorted(s):
+#         return False
+#     else:
+#         return True
+
+# print(alphabetic("abc"))
+
+# ["abc"]
+# list("abc") --> ['a', 'b', 'c']
+
+# import re
+
+# def is_valid_email(email):
+#     # Define the regex pattern for a valid email
+#     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    
+#     # Use re.match to check if the email matches the pattern
+#     return re.match(pattern, email) is not None
+
+# # Example usage
+# emails = [
+#     "9john.doe@example.com",
+#     "invalid-email",
+#     "user@sub.domain.co",
+#     "user@domain",
+#     "user@domain.c"
+# ]
+
+# for email in emails:
+#     print(f"{email}: {'Valid' if is_valid_email(email) else 'Invalid'}")
+'''import codewars_test as test
+from solution import hex_color
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(hex_color(''), 'black')
+        test.assert_equals(hex_color('000 000 000'), 'black')
+        test.assert_equals(hex_color('121 245 255'), 'blue')
+        test.assert_equals(hex_color('027 100 100'), 'cyan')
+        test.assert_equals(hex_color('021 021 021'), 'white')
+        test.assert_equals(hex_color('255 000 000'), 'red')
+        test.assert_equals(hex_color('000 147 000'), 'green')
+        test.assert_equals(hex_color('212 103 212'), 'magenta')
+        test.assert_equals(hex_color('101 101 092'), 'yellow')
+        
+red + blue = magenta
+
+green + red = yellow
+
+blue + green = cyan
+
+red + blue + green = white'''
+
+# def hex_color(codes):
+#     if not codes or codes == "000 000 000":
+#         return "black"
+    
+#     color_combos = {
+#         "green+blue": "cyan",
+#         "red+green": "yellow",
+#         "red+blue": "magenta",
+#         "red+green+blue": "white"
+#     }
+
+#     codes = codes.split()
+#     colors = ["red", "green", "blue"]
+#     color_codes = [(colors[i], int(codes[i])) for i in range(len(codes))]
+#     color_codes.sort(key=lambda item: item[-1])
+#     highest_intensity = color_codes[-1][-1]
+#     colors_with_highest_intensity = [color[0] for color in color_codes if color[-1] == highest_intensity]
+
+#     if len(colors_with_highest_intensity) == 1:
+#         return colors_with_highest_intensity[0]
+    
+#     color_combo = "+".join(colors_with_highest_intensity)
+#     return color_combos[color_combo]
+    
+
+
+# print(hex_color("834 833 887"))
+
+'''Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+[1, 2, 3, 4, 5] --> [-1, -2, -3, -4, -5]
+[1, -2, 3, -4, 5] --> [-1, 2, -3, 4, -5]
+[] --> []
+You can assume that all values are integers. Do not mutate the input array.'''
+
+# def invert(lst):
+#     return [-num for num in lst]
+        
+# # print(invert([1, 2, 3, 4, 5]))
+# # def invert(lst):
+# # abc=[1, 2, 3, 4, 5]
+# # for num in abc:
+# #     print([-num])
+
+        
+# print(invert([1, 2, 3, 4, 5]))
+'''Your function takes two arguments:
+current father's age (years)
+current age of his son (years)
+Сalculate how many years ago the father was twice as old as his son
+(or in how many years he will be twice as old). 
+The answer is always greater or equal to 0,
+no matter if it was in the past or it is in the future.
+def basic_test_cases():
+        test.assert_equals(twice_as_old(36,7) , 22)
+        test.assert_equals(twice_as_old(55,30) , 5)
+        test.assert_equals(twice_as_old(42,21) , 0)
+        test.assert_equals(twice_as_old(22,1) , 20)
+        test.assert_equals(twice_as_old(29,0) , 29)'''
+
+# def twice_as_old(dad_years_old, son_years_old):
+#     dad, son = dad_years_old, son_years_old
+#     count = 0
+#     while dad != son * 2:
+#         dad -= 1
+#         son -= 1
+#         count += 1
+#         if son <= 0:
+#             dad, son, count = dad_years_old, son_years_old, 0
+#             while dad != son * 2:
+#                 dad += 1
+#                 son += 1
+#                 count += 1
+#     return count
+
+# def twice_as_old(dad_years_old, son_years_old):
+#     return dad_years_old - 2 * son_years_old
+    
+# print(twice_as_old(42, 21))
+
+# def sum_two_smallest_numbers(numbers):
+#     numbers = sorted(numbers)
+#     numbers = sum(numbers[0:2])
+#     return (numbers)
+
+# print(sum_two_smallest_numbers([7, 15, 12, 18, 22]))
+
+# def factorial(n):
+#     if n < 0 or n > 12: raise ValueError
+#     for en in range(1, n): n = n * en
+#     return n
+        
+#     print(n)
+
+# print(factorial(10))
+# from collections import Counter
+
+
+# def get_socks(name, socks):
+#     if name == "Punky":
+#         first_sock = socks[0]
+#         for sock in socks[1:]:
+#             if sock != first_sock:
+#                 return [first_sock, sock]
+#         return []
+#     else:
+#         count_of_each_sock = [key for key, value in Counter(socks).items() if value >= 2]
+#         return [count_of_each_sock[0], count_of_each_sock[0]] if count_of_each_sock else []
+    
+
+# print(get_socks("Henry", ['blue','green',"green", "red", "black"]))
+
+'''Sample Tests
+1
+test.describe('Test cases analogy:')
+2
+## you can use your own test cases here
+3
+test.assert_equals(array_info([1,2,3.33,4,5.01,'bass','kick',' ']),[[8],[3],[2],[2],[1]],'Incorrect, check your code')
+4
+test.assert_equals(array_info([0.001,2,' ']),[[3],[1],[1],[None],[1]],'Incorrect, check your code')
+5
+test.assert_equals(array_info([]),'Nothing in the array!','Incorrect, check your code')
+6
+test.assert_equals(array_info([' ']),[[1],[None],[None],[None],[1]],'Incorrect, check your code')
+
+Brief
+Sometimes we need information about the list/arrays we're dealing with. You'll have to write such a function in this kata. Your function must provide the following informations:
+
+Length of the array
+Number of integer items in the array
+Number of float items in the array
+Number of string character items in the array
+Number of whitespace items in the array
+The informations will be supplied in arrays that are items of another array. Like below:
+Output array = [[array length],[no of integer items],[no of float items],[no of string chars items],[no of whitespace items]]
+Added Difficulty
+If any item count in the array is zero, you'll have to replace it with a None/nil/null value (according to the language). 
+And of course, if the array is empty then return 'Nothing in the array!. For the sake of simplicity, let's just suppose that there are no nested structures.
+Output ====== If you're head is spinning (just kidding!) then these examples will help you out-
+array_info([1,2,3.33,4,5.01,'bass','kick',' '])--------->[[8],[3],[2],[2],[1]]    
+array_info([0.001,2,' '])------------------------------>[[3],[1],[1],[None],[1]]   
+array_info([])----------------------------------------->'Nothing in the array!'
+array_info([' '])-------------------------------------->[[1],[None],[None],[None],[1]]
+Remarks
+The input will always be arrays/lists. So no need to check the inputs.
+Hint ==== See the tags!!!
+Now let's get going !
+# '''
+# def array_info(xxxxx):
+#     if xxxxx == []:
+#         return "Nothing in the array!"
+#     len_xxxxx = len(xxxxx)
+#     no_of_int = 0
+#     no_of_float = 0
+#     no_of_str = 0
+#     no_of_whitespaces = 0
+#     for xxx in xxxxx:
+#         if type(xxx) == int:
+#             no_of_int += 1
+#         if type(xxx) == float:
+#             no_of_float += 1
+#         if type(xxx) == str and xxx != " ":
+#             no_of_str += 1
+#         if xxx == " ":
+#             no_of_whitespaces += 1
+
+#     output = [[len_xxxxx if len_xxxxx != 0 else None],
+#               [no_of_int if no_of_int != 0 else None],
+#               [no_of_float if no_of_float != 0 else None],
+#               [no_of_str if no_of_str != 0 else None],
+#               [no_of_whitespaces if no_of_whitespaces != 0 else None]]
+    
+#     return output
+
+
+    # for xxx in xxxxx:
+    #     if xxx == 0:
+    #         return None
+    #     if xxxxx == []:
+    #         return "Nothing in the array!"
+    # else:
+    # if len_xxxxx == 0 or no_of_int == 0 or no_of_float == 0 or no_of_str == 0 or no_of_whitespaces == 0:
+    #     return 
+
+# print(array_info([1,2,3.33,4,5.01,'bass','kick',' ']))
+# print(array_info([" "]))
+'''import codewars_test as test
+from solution import band_name_generator
+
+@test.describe("Basic Tests")
+def basic_tests():
+    
+    @test.it("Basic Tests")
+    def basic_tests():
+        test.assert_equals(band_name_generator("knife"), "The Knife")
+        test.assert_equals(band_name_generator("tart"), "Tartart")
+        test.assert_equals(band_name_generator("sandles"), "Sandlesandles")
+        test.assert_equals(band_name_generator("bed"), "The Bed")
+        test.assert_equals(band_name_generator("qq"), "Qqq")
+        
+My friend wants a new band name for her band. She like bands that use the formula: 
+"The" + a noun with the first letter capitalized, for example:
+"dolphin" -> "The Dolphin"
+However, when a noun STARTS and ENDS with the same letter, 
+she likes to repeat the noun twice and connect them together with the first and last letter, 
+combined into one word (WITHOUT "The" in front), like this:
+"alaska" -> "Alaskalaska"
+Complete the function that takes a noun as a string, and returns her preferred band name written as a string.
+
+'''
+# def band_name_generator(name: str):
+#     name = name.lower()
+#     if name.startswith(name[0]) and name.endswith(name[0]):
+#         return name.capitalize()[:-2] + name.lower()
+#     else:
+#         return "The " + name.capitalize()
+        
+# print( band_name_generator("Tart"))
+
+
+'''Ahoy matey!
+
+You are a leader of a small pirate crew. And you have a plan. With the help of OOP you wish to make a pretty efficient system to identify ships with heavy booty on board!
+
+Unfortunately for you, people weigh a lot these days, so how do you know if a ship is full of gold and not people?
+
+You begin with writing a generic Ship class / struct:
+
+class Ship:
+    def __init__(self, draft, crew):
+        self.draft = draft
+        self.crew = crew
+Every time your spies see a new ship enter the dock, they will create a new ship object based on their observations:
+
+draft - an estimate of the ship's weight based on how low it is in the water
+crew - the count of crew on board
+Titanic = Ship(15, 10)
+Task
+You have access to the ship "draft" and "crew". "Draft" is the total ship weight and "crew" is the number of humans on the ship.
+
+Each crew member adds 1.5 units to the ship draft. If after removing the weight of the crew, the draft is still more than 20, 
+then the ship is worth looting. Any ship weighing that much must have a lot of booty!
+
+Add the method
+
+is_worth_it
+to decide if the ship is worthy to loot. For example:
+
+Titanic.is_worth_it()
+False
+Good luck and may you find GOOOLD!'''
+
+# class Ship:
+#     def __init__(self, draft, crew):
+#         self.draft = draft
+#         self.crew = crew
+
+#     def is_worth_it(self):
+#         self.crew = self.crew * 1.5
+#         if self.draft - self.crew > 20:
+#             return True
+#         else: 
+#             return False
+
+# Ship(100,20)
+#     ship_total_weight = 100
+#     weight_per_person = 1.5
+#     crew_total_weight = crew * weight_per_person = 30
+#     weight_of_items_in_ship = ship_total_weight - crew_total_weight = 70
+'''Task Description
+You're re-designing a blog, and the blog's posts have the Weekday Month Day, time format for showing the date and time when a post was made, e.g., Friday May 2, 7pm.
+You're running out of screen real estate, and on some pages you want to display a shorter format, Weekday Month Day that omits the time.
+Write a function that takes the website date/time in its original string format and returns the shortened format.
+Input
+Input will always be a string, e.g., "Friday May 2, 7pm". 
+Output
+Output will be the shortened string, e.g., "Friday May 2".'''
+
+# def shorten_to_date(long_date: str):
+#     long_date = long_date.split()
+#     del long_date[-1]
+#     long_date = " ".join(long_date)
+#     return long_date[:-1]
+
+# print(shorten_to_date("Monday February 2, 8pm"))
+
+# def remove_bmw(string: str):
+#     try:
+#         string = string.replace("B", "")
+#         string = string.replace('b', "")
+#         string = string.replace('M', "")
+#         string = string.replace('m', "")
+#         string = string.replace('W', "")
+#         string = string.replace('w', "")
+#         return string
+#     except:
+#         raise TypeError("This program only works for text.")
+    
+# def remove_bmw(string: str):
+#     import re
+#     if type(string) != str:
+#         raise TypeError("This program only works for text.")
+#     return re.sub("[BMWbmw]", "", string)
+
+# print(remove_bmw("bmwvolvoBMW"))
+
+# def find_function(func):
+#         for x in func:
+#             if type(x) == type(find_function):
+#                 return x
+
+
+# print(find_function([lambda a: a%2==0,9,3,1,0]))
+
+
+# arr = [2,1,5,3]
+
+# def get_val(a):
+#     return a % 2 == 0
+
+
+# x = lambda a: a % 5 == 0
+
+# [lambda a: a%2==0,9,3,1,0]
+# result = [i for i in arr if x(i)]
+# print (result)
+
+# for i in arr:
+#     if i == 1:
+#         print (i)
+# a = [i for i in arr if i == "a"]
+# print (a)
+
+
+# find_function(
+#     [
+#         lambda a: a%2==0,
+#         9,
+#         3,
+#         1,
+#         0
+#     ],
+#     [1,2,3,4]
+# )
+
+# def cap_me(arr: str):
+#     return [i.capitalize() for i in arr]
+
+
+# print(cap_me(["jo", "nelson", "jurie"]))
+
+# def time_convert(num):
+#     if num <= 0:
+#         return "00:00"
+#     else:
+#         hour = num // 60
+#         min = num % 60
+#         return f"{hour}:{min}"
+
+# def better_than_average(class_points, your_points):
+#     if sum(class_points) / len(class_points) < your_points: return True
+#     return False
+
+# print(better_than_average([100, 40, 34, 57, 29, 72, 57, 88], 75))
+
+# class_points = [100, 40, 34, 57, 29, 72, 57, 88]
+# print(sum(class_points) / len(class_points))
+
+# def str_count(strng, letter):
+#     count = 0
+#     for letter in strng:
+#         if letter in strng:
+#             count += 1
+#     return count
+
+
+# print (str_count('striiing', 'i'))
+# strng = "Panda has 48 apples and loses 4"
+# def calculate(strng: str):
+#     if "loses" in strng:
+#         return int(strng.split()[2]) - int(strng.split()[-1])
+#     else:
+#         return int(strng.split()[2]) + int(strng.split()[-1])
+        
+
+# print(calculate("Panda has 48 apples and gains 4"))
+# def what_list_am_i_on(actions: str):
+#     for word in actions:
+#         if word.startswith(("b", "f", "k")): return "naughty"
+#         elif word.startswith(("g", "s", "n")): return "nice"
+#         else: return "naughty"
+
+# def what_list_am_i_on(actions: str):
+#     naughty_words = 0
+#     nice_words = 0
+#     for word in actions:
+#         if word.startswith(("b", "f", "k")): 
+#             naughty_words += 1
+#         elif word.startswith(("g", "s", "n")): 
+#             nice_words += 1
+#     if naughty_words >= nice_words:
+#         return "naughty"
+#     else:
+#         return "nice"
+
+
+# print(what_list_am_i_on(['never got into a fight', 'tied someone\'s shoes', 'broke a vending machine' ]))
+
+# def create_template(template):
+#     def answer(*args, **kwargs):
+#         new_string = []
+#         for word in template.split():
+#             if word.startswith("{"):
+#                 new_string.append(kwargs.get(word[2:-2]))
+#             else:
+#                 new_string.append(word)
+#         return " ".join([str(word) for word in new_string]).replace("None", "")
+                
+#     return answer
+
+# template = create_template("{{firstName}} {{lastName}} likes {{interests}}")
+# print(template(firstName="John", lastName="Smith", interests="sport"))
+# print(template(firstName="Albert", occuptation="physicist"))
+
+'''Create a function that takes a number as an argument and returns a grade based on that number.
+
+Score	Grade
+Anything greater than 1 or less than 0.6	"F"
+0.9 or greater	"A"
+0.8 or greater	"B"
+0.7 or greater	"C"
+0.6 or greater	"D"
+Examples:
+
+grader(0)   should be "F"
+grader(1.1) should be "F"
+grader(0.9) should be "A"
+grader(0.8) should be "B"
+grader(0.7) should be "C"
+grader(0.6) should be "D"'''
+
+# def grader(score):
+#     # grade_points = {
+#     #     0.6 : 'F',
+#     #     0.9 : 'A',
+#     #     0.8 : 'B',
+#     #     0.7 : 'C',
+#     #     0.6 : 'D',
+#     # }
+#     if score > 1 or score < 0.6: return "F"
+#     elif score >= 0.9: return "A"
+#     elif score >= 0.8: return "B"
+#     elif score >= 0.7: return "C"
+#     elif score >= 0.6: return "D"
+
+# grader(0.87)
+
+# '''Complete the solution so that it reverses all of the words within the string passed in.
+
+# Words are separated by exactly one space and there are no leading or trailing spaces.
+
+# Example(Input --> Output):
+
+# "The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"'''
+
+# def reverse_words(s: str):
+#     s = s.split()[::-1]
+#     s = " ".join(s)
+#     return s
+
+#     s = s[::-1]
+#     return s
+    
+# print(reverse_words('mango is a fruit'))
+
+# '''Is the string uppercase?
+# Task
+# Create a method to see whether the string is ALL CAPS.
+
+# Examples (input -> output)
+# "c" -> False
+# "C" -> True
+# "hello I AM DONALD" -> False
+# "HELLO I AM DONALD" -> True
+# "ACSKLDFJSgSKLDFJSKLDFJ" -> False
+# "ACSKLDFJSGSKLDFJSKLDFJ" -> True'''
+# def is_uppercase(inp: str):
+#     # if inp == inp.upper(): return True
+#     # else: return False
+#     return True if inp == inp.upper()  else False
+# print(is_uppercase(inp))
+
+#     fruits_dict = {
+#     1: "kiwi",
+#     2: "pear",
+#     3: "kiwi",
+#     4: "banana",
+#     5: "melon",
+#     6: "banana",
+#     7: "melon",
+#     8: "pineapple",
+#     9: "apple",
+#     10: "pineapple",
+#     11: "cucumber",
+#     12: "pineapple",
+#     13: "cucumber",
+#     14: "orange",
+#     15: "grape",
+#     16: "orange",
+#     17: "grape",
+#     18: "apple",
+#     19: "grape",
+#     20: "cherry",
+#     21: "pear",
+#     22: "cherry",
+#     23: "pear",
+#     24: "kiwi",
+#     25: "banana",
+#     26: "kiwi",
+#     27: "apple",
+#     28: "melon",
+#     29: "banana",
+#     30: "melon",
+#     31: "pineapple",
+#     32: "melon",
+#     33: "pineapple",
+#     34: "cucumber",
+#     35: "orange",
+#     36: "apple",
+#     37: "orange",
+#     38: "grape",
+#     39: "orange",
+#     40: "grape",
+#     41: "cherry",
+#     42: "pear",
+#     43: "cherry",
+#     44: "pear",
+#     45: "apple",
+#     46: "pear",
+#     47: "kiwi",
+#     48: "banana",
+#     49: "kiwi",
+#     50: "banana",
+#     51: "melon",
+#     52: "pineapple",
+#     53: "melon",
+#     54: "apple",
+#     55: "cucumber",
+#     56: "pineapple",
+#     57: "cucumber",
+#     58: "orange",
+#     59: "cucumber",
+#     60: "orange",
+#     61: "grape",
+#     62: "cherry",
+#     63: "apple",
+#     64: "cherry",
+#     65: "pear",
+#     66: "cherry",
+#     67: "pear",
+#     68: "kiwi",
+#     69: "pear",
+#     70: "kiwi",
+#     71: "banana",
+#     72: "apple",
+#     73: "banana",
+#     74: "melon",
+#     75: "pineapple",
+#     76: "melon",
+#     77: "pineapple",
+#     78: "cucumber",
+#     79: "pineapple",
+#     80: "cucumber",
+#     81: "apple",
+#     82: "grape",
+#     83: "orange",
+#     84: "grape",
+#     85: "cherry",
+#     86: "grape",
+#     87: "cherry",
+#     88: "pear",
+#     89: "cherry",
+#     90: "apple",
+#     91: "kiwi",
+#     92: "banana",
+#     93: "kiwi",
+#     94: "banana",
+#     95: "melon",
+#     96: "banana",
+#     97: "melon",
+#     98: "pineapple",
+#     99: "apple",
+#     100: "pineapple"
+# }
+
+
+# '''
+# Subtract the sum
+# NOTE! This kata can be more difficult than regular 8-kyu katas (lets say 7 or 6 kyu)
+
+# Complete the function which get an input number n such that n >= 10 and n < 10000, then:
+
+# Sum all the digits of n.
+# Subtract the sum from n, and it is your new n.
+# If the new n is in the list below return the associated fruit, otherwise return back to task 1.
+# Example
+# n = 325
+# sum = 3+2+5 = 10
+# n = 325-10 = 315 (not in the list)
+# sum = 3+1+5 = 9
+# n = 315-9 = 306 (not in the list)
+# sum = 3+0+6 = 9
+# n =306-9 = 297 (not in the list)
+# .
+# .
+# .
+# ...until you find the first n in the list below.
+
+# There is no preloaded code to help you. This is not about coding skills; think before you code'''
+
+
+# def subtract_sum(number: int):
+#     number = str(number)
+#     total = 0
+    
+#     for evry_num in number:
+#         total += int(evry_num)
+
+#     number = int(number) - total
+    
+#     if number in fruits_dict:
+#         return fruits_dict[number]
+#     else:
+#         return subtract_sum(number)
+        
+
+# print(subtract_sum(123))
+
+# class Solution:
+#     def isUgly(self, n: int) -> bool:
+#         divisibility = dict()
+#         for small_num in range(2, n):
+#             if n % small_num == 0:
+#                 divisibility[small_num] = True
+#             else:
+#                 divisibility[small_num] = False
+        
+#         not_included = [key for key, value in divisibility.items() if value is True and key not in (2, 3, 5)]
+#         return False if not_included else True
+    
+# print(Solution().isUgly(15))
+
+# def filter_numbers(string: str):
+#     return "".join(x for x in string if x.isalpha() or x == " ")
+
+
+# print(filter_numbers("test123"))
+
+
+'''Create a function with two arguments that will return an array of the first n multiples of x.
+Assume both the given number and the number of times to count will be positive numbers greater than 0.
+Return the results as an array or list ( depending on language ).
+Examples
+x = 1, n = 10 --> [1,2,3,4,5,6,7,8,9,10]
+x = 2, n = 5  --> [2,4,6,8,10]  test.assert_equals(count_by(1, 5), [1, 2, 3, 4, 5])
+        test.assert_equals(count_by(2, 5), [2, 4, 6, 8, 10])
+        test.assert_equals(count_by(3, 5), [3, 6, 9, 12, 15])
+        test.assert_equals(count_by(50, 5), [50, 100, 150, 200, 250])
+        test.assert_equals(count_by(100, 5), [100, 200, 300, 400, 500])'''
+
+
+def count_by(x, n):
+    return list(range(x, x*n+1, x))
+
+# print(count_by(50,5))
+    
