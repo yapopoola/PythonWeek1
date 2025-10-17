@@ -20,4 +20,4 @@ class TestCountBy(TestCase):
         return_value = count_by(x=2, n=5)
         self.assertEquals(type(return_value),  list)
         self.assertIsInstance(return_value, list)
-    
+

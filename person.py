@@ -2506,8 +2506,21 @@ x = 2, n = 5  --> [2,4,6,8,10]  test.assert_equals(count_by(1, 5), [1, 2, 3, 4, 
         test.assert_equals(count_by(100, 5), [100, 200, 300, 400, 500])'''
 
 
-def count_by(x, n):
-    return list(range(x, x*n+1, x))
+# def count_by(x, n):
+#     return list(range(x, x*n+1, x))
 
 # print(count_by(50,5))
+
+
+# def string_to_array(s: str):
+#     return [""] if s == "" else s.split()
     
+# def dna_to_rna(dna):
+#     return dna.replace("T", "U")
+
+def even_or_odd(number: int):
+    if type(number) == int:
+        return "Even" if int(number) % 2 == 0 else "Odd"
+    raise TypeError("Please provide a valid number")
+
+# print(even_or_odd(["Benny", 123]))
