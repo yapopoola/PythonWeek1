@@ -1466,7 +1466,7 @@ set_the_alarms_up("23:55", 2) # Should return ["23:55", "00:00"]
 Input
 time - a string, representing the time. Will always be valid. (no 25:30, 08:65 and etc.)
 
-n - a number of alarms, needed to be set up. (n > 1, simply cause noone wakes up to one alarm)
+n - a number of alarms, needed to be set up. (n > 1, simply cause noone wakes up to one alarm).
 
 Output
 An array, consisting of all timestamps, an alarm is going to ring.
@@ -2518,9 +2518,294 @@ x = 2, n = 5  --> [2,4,6,8,10]  test.assert_equals(count_by(1, 5), [1, 2, 3, 4, 
 # def dna_to_rna(dna):
 #     return dna.replace("T", "U")
 
-def even_or_odd(number: int):
-    if type(number) == int:
-        return "Even" if int(number) % 2 == 0 else "Odd"
-    raise TypeError("Please provide a valid number")
+# def even_or_odd(number: int):
+#     if type(number) == int:
+#         return "Even" if int(number) % 2 == 0 else "Odd"
+#     raise TypeError("Please provide a valid number")
 
 # print(even_or_odd(["Benny", 123]))
+
+
+
+'''Weekend assignment:
+Create a python abstract class called Shape with abstract methods for calculating the area and perimeter of shapes. 
+Then create the subclasses Triangle, Circle, Square from the Shape class and implement their respective area and perimeter methods.
+Each Shape subclass should upon instantiation, receive their individually required attributes that would be useful in eventually calculating their areas and perimeters.
+However, before implementing these classes, endeavour to write unittests for each subclass and their methods. 
+ 
+Acceptance Criteria:
+Code includes a class named Shape
+Code includes a class named Triangle
+Code includes a class named Circle
+Code includes a class named Square
+Each of the aforementioned classes must contain at least two methods which shall be named area and perimeter.
+There should be at least three test classes: one for each shape subclass. The test classes must contain at least 12 testcases each. 
+- At least 6 tests for the area method, and another 6 tests for the perimeter method of each subclass. The minimum is 6 but more is preferable.'''
+
+
+# print("hello world")
+
+from abc import ABC, abstractmethod
+import math
+
+# Abstract class
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+# # Triangle subclass
+class Triangle(Shape):
+    def __init__(self, base, height, side1, side2):
+        self.base = base
+        self.height = height
+        self.side1 = side1
+        self.side2 = side2
+
+    def area(self):
+        return 0.5 * self.base * self.height
+
+    def perimeter(self):
+        return self.base + self.side1 + self.side2
+
+# # Circle subclass
+# class Circle(Shape):
+#     def __init__(self, radius):
+#         self.radius = radius
+
+#     def area(self):
+#         return math.pi * self.radius ** 2
+
+#     def perimeter(self):
+#         return 2 * math.pi * self.radius
+
+# # Square subclass
+# class Square(Shape):
+#     def __init__(self, side):
+#         self.side = side
+
+#     def area(self):
+#         return self.side ** 2
+
+#     def perimeter(self):
+#         return 4 * self.side
+'''Here is the algorithm:
+
+The serial number of every Euro bill contains 2 uppercase latin letters at the start and the following 10 digits.
+
+1. Sum every digit in a serial number.
+2. Get the English Alphabetical position of the two letters. (A - 1, B - 2, C - 3 and etc.).
+3. Add those numbers to the already existing sum of digits.
+4. Sum the result's digits up. If the sum is not 1-digit number, keep summing the new number's digits, until the result is 1-digit number.
+If the eventual result equals 7, you're holding a real Euro bill. Otherwise, the bill is fake. Assume that every input matches the requirements of a serial number (2 uppercase latin letters and 10 digits).
+
+
+An example of a valid serial number:
+
+VA0436214792
+V = 22; A = 1
+
+22 + 1 + 0 + 4 + 3 + 6 + 2 + 1 + 4 + 7 + 9 + 2 = 61 -> 6 + 1 = 7 -> True
+And an invalid one:
+
+WF9804350654
+W = 23; F = 6
+
+23 + 6 + 9 + 8 + 0 + 4 + 3 + 5 + 0 + 6 + 5 + 4 = 73 -> 10 -> 1 -> False
+Good luck!
+test.assert_equals(validate_euro("VA0436214792"), True, "Incorrect for VA0436214792")
+        test.assert_equals(validate_euro("HG2015896213"), True, "Incorrect for HG2015896213")
+        test.assert_equals(validate_euro("UB5067129430"), False, "Incorrect for UB5067129430")
+        test.assert_equals(validate_euro("YZ8630148532"), False, "Incorrect for YZ8630148532")
+        test.assert_equals(validate_euro("DA8374810231"), False, "Incorrect for DA8374810231")'''    
+
+
+
+# def validate_euro(serial_number):
+#     alphabet_positions = {
+#     'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5,
+#     'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10,
+#     'K': 11, 'L': 12, 'M': 13, 'N': 14, 'O': 15,
+#     'P': 16, 'Q': 17, 'R': 18, 'S': 19, 'T': 20,
+#     'U': 21, 'V': 22, 'W': 23, 'X': 24, 'Y': 25,
+#     'Z': 26 }
+#     first_1 = serial_number[0]
+#     first_2 = serial_number[1]
+#     sum1 = sum([alphabet_positions[first_1], alphabet_positions[first_2]])
+#     sum2 = sum([int(x) for x in serial_number[2:]])
+#     sum_all= sum1 + sum2
+#     sum_sum_all = str(sum_all)
+#     sum_sum_all = int(sum_sum_all[0]) + int(sum_sum_all[1])
+#     print(sum_sum_all)
+#     if sum_sum_all == 7:
+#         return True
+#     else: return False
+
+
+#     print (sum_sum_all)
+
+
+# print(validate_euro("DA8374810231"))
+
+# print(validate_euro("DA8374810231"))
+
+
+# asdf = [1,2,3,4,5,6,7,8,9,10,11]
+# abc = [x for x in asdf if x // 2 == 2]
+# print (abc)
+
+# def sorter(textbooks):
+#     def sort_by(book):
+#         return book.lower()
+    
+#     textbooks.sort(key=sort_by)
+#     return textbooks
+
+# print(sorter(['Algebra', 'history', 'Geometry', 'english']))
+
+
+# def positive_sum(arr):
+#     # Your code here
+#     return sum([x for x in arr if x > 0])
+
+# def litres(time):
+#     return 456.527 // 1
+
+# print(litres(10123.3217))
+'''ef basic_test_cases():''''''
+        test.assert_equals(points(['1:0','2:0','3:0','4:0','2:1','3:1','4:1','3:2','4:2','4:3']), 30)
+        test.assert_equals(points(['1:1','2:2','3:3','4:4','2:2','3:3','4:4','3:3','4:4','4:4']), 10)
+        test.assert_equals(points(['0:1','0:2','0:3','0:4','1:2','1:3','1:4','2:3','2:4','3:4']), 0)
+        test.assert_equals(points(['1:0','2:0','3:0','4:0','2:1','1:3','1:4','2:3','2:4','3:4']), 15)
+        test.assert_equals(points(['1:0','2:0','3:0','4:4','2:2','3:3','1:4','2:3','2:4','3:4']), 12)'''
+# def points(games):
+#     total_points = 0
+#     for score in games:
+#         x = score[0]
+#         y = score[-1]
+#         if x > y:total_points += 3
+#         elif x < y:total_points += 0
+#         elif x == y:total_points += 1
+#     return total_points
+ 
+# print(points(['1:0','2:0','3:0','4:0','2:1','3:1','4:1','3:2','4:2','4:3']))
+
+# def human_years_cat_years_dog_years(human_years):
+#     if human_years == 1:
+#         cat = human_years * 15
+#     elif human_years == 2:
+#         cat = (15) + 9
+#     elif human_years > 2:
+#         cat = (15) + 9 + (4 * human_years)
+        
+#     if human_years == 1:
+#         dog = human_years * 15
+#     elif human_years == 2:
+#         dog = (15) + 9
+#     elif human_years > 2:
+#         dog = (15) + 9 + (5 * human_years)
+        
+#     return [human_years, cat, dog]
+
+# def human_years_cat_years_dog_years(human_years):
+#     if human_years == 1:
+#         cat_years = 15
+#         dog_years = 15
+#     elif human_years == 2:
+#         cat_years = 15 + 9
+#         dog_years = 15 + 9
+#     else:
+#         cat_years = 15 + 9 + (human_years - 2) * 4
+#         dog_years = 15 + 9 + (human_years - 2) * 5
+#     return [human_years, cat_years, dog_years]
+
+
+# print(human_years_cat_years_dog_years(10))
+
+# def opposite(number):
+#     number = str(number)
+#     if number.startswith("-"):
+#         return float(number[1:])
+#     else:
+#         return float("-" + number)
+    
+# def opposite(number: str):
+#     number = str(number)
+#     if number.startswith("-"):
+#         number = number[1:]
+#         return float(number)
+#     else:
+#         number = "-" + number
+#         return float(number)
+    
+# print(opposite(25))
+# print(opposite(1))
+# print(opposite(25.6))
+# print(opposite(0))
+# print(opposite(1425.2222))
+# print(opposite(-3.1458))
+# print(opposite(-95858588225))
+
+# def multi_table(number):
+#     return [f"{i} * {x} = (i * x) "  for i,x in enumerate(range(1,10))]
+
+# def multi_table(number):
+#     return '\n'.join([f"{i} * {number} = {i * number}" for i in range(1, 11)])
+
+# def multi_table(number):
+#     return ('\n'.join([f"{i} * {number} = {i * number}" for i in range(1, 11)]))
+
+# print(multi_table(5))
+
+
+# def get_median(data):
+#     print(data)
+#     data.sort()
+#     print(data)
+#     return data[len(data) // 2]
+
+# print(get_median([69,12,23,45,67,89,55,33,22,11,12,13,12]))
+
+# def get_median(data):
+#     data = sorted(data)
+#     n = len(data)
+#     mid = n // 2
+#     if n % 2 == 0:  # even length
+#         return (data[mid - 1] + data[mid]) / 2
+#     else:           # odd length
+#         return data[mid]
+
+# print(get_median([69,12,23,45,67,89,55,33,22,11,12,13,12]))
+# def get_mode(data):
+#     empty_dict = {}
+#     for x in data:
+#         if x in empty_dict:
+#             empty_dict[x] += 1
+#         else:
+#             empty_dict[x] = 1
+
+#     maxi = max(empty_dict.values())
+#     mazi = [i for i in empty_dict if empty_dict[i] == maxi]
+#     if len(mazi) == 1: return mazi[0]
+#     else: return ", ".join([str(x) for x in mazi])
+# print(get_mode([69,12,23,45,11,67,11,89,55,33,22,11,12,13,12]))
+
+# def get_mean(data):
+#     return round(sum(data) / len(data), 1)
+
+# print(get_mean([69,12,23,45,11,67,11,89,55,33,22,11,12,13,12]))
+
+# def generate_shape(n):
+#     na = ""
+#     for i in range(n):
+#         na += n * ('+')
+#         na += "\n"
+    
+#     return na[:-1]
+
+# print(generate_shape(5))
+

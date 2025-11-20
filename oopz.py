@@ -7,6 +7,13 @@ str_1 = "I am a sentence".replace(" ", "")
 str_2 = "Am I a question?".replace(" ", "")
 
 # print(type(list_1))
+class str:
+    def __init__(self, *args):
+        self.elements = args
+
+    def lower(self): ...
+
+    def upper(self): ...
 
 class HumanBeing: 
     number_of_eyes = 2
@@ -48,8 +55,9 @@ class HumanBeing:
     # def __repr__(self):
     #     pass
 
-# blind_man = HumanBeing()
+# blind_man = HumanBeing
 blind_man = HumanBeing(hands=2, legs=2, eyes=0)
+# blind_man.is_walking
 # blind_man.number_of_eyes
 one_legged_woman = HumanBeing(eyes=2, hands=2, legs=1)
 # one_legged_woman.start_talking()
